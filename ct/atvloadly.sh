@@ -42,9 +42,9 @@ function update_script() {
     cd /tmp || exit
     curl -fsSL -o atvloadly.tar.gz \
       "https://github.com/bitxeno/atvloadly/releases/download/${RELEASE}/atvloadly-linux-${ARCH}.tar.gz"
-    tar -xzf atvloadly.tar.gz -C /usr/bin/
-    chmod +x /usr/bin/atvloadly
-    rm -f atvloadly.tar.gz
+    tar -xzf atvloadly.tar.gz
+    install -m 0755 "atvloadly-linux-${ARCH}" /usr/bin/atvloadly
+    rm -f "atvloadly-linux-${ARCH}" atvloadly.tar.gz
     echo "${RELEASE}" >/opt/${APP}_version.txt
     msg_ok "Updated ${APP} to ${RELEASE}"
 

@@ -80,8 +80,8 @@ cd /tmp || exit
 $STD curl -fsSL -o atvloadly.tar.gz \
   "https://github.com/bitxeno/atvloadly/releases/download/${RELEASE}/atvloadly-linux-${ARCH}.tar.gz"
 tar -xzf atvloadly.tar.gz
-install -m 0755 atvloadly /usr/bin/atvloadly
-rm -f atvloadly atvloadly.tar.gz
+install -m 0755 "atvloadly-linux-${ARCH}" /usr/bin/atvloadly
+rm -f "atvloadly-linux-${ARCH}" atvloadly.tar.gz
 
 # Persistent data layout — mirrors the upstream Docker entrypoint
 mkdir -p /data/lockdown
