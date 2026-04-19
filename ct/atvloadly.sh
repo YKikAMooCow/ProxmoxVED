@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # shellcheck source=/dev/null
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVED/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/YKikAMooCow/ProxmoxVED/add/atvloadly/misc/build.func)
 # Copyright (c) 2021-2026 community-scripts ORG
-# Author: <your-github-handle>
+# Author: spathix
 # License: MIT | https://github.com/community-scripts/ProxmoxVED/raw/main/LICENSE
 # Source: https://github.com/bitxeno/atvloadly
 
