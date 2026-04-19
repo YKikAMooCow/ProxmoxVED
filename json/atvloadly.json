@@ -1,0 +1,54 @@
+{
+  "name": "Atvloadly",
+  "slug": "atvloadly",
+  "categories": [],
+  "date_created": "2026-04-19",
+  "type": "ct",
+  "updateable": true,
+  "privileged": true,
+  "interface_port": 5533,
+  "documentation": "https://github.com/bitxeno/atvloadly/wiki",
+  "config_path": "/data/config.yaml",
+  "website": "https://github.com/bitxeno/atvloadly",
+  "logo": "https://raw.githubusercontent.com/bitxeno/atvloadly/master/doc/preview/logo.svg",
+  "description": "atvloadly is a web service for sideloading IPA files onto Apple TV. It uses PlumeImpactor as the sideload core and automatically refreshes installed apps to keep them available. Pairing is performed over the LAN using mDNS (Bonjour) — the LXC must be bridged onto the same L2 network as the Apple TV for discovery to work.",
+  "install_methods": [
+    {
+      "type": "default",
+      "script": "ct/atvloadly.sh",
+      "resources": {
+        "cpu": 2,
+        "ram": 1024,
+        "hdd": 4,
+        "os": "Ubuntu",
+        "version": "22.04"
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [
+    {
+      "text": "Runs as a privileged LXC. usbmuxd2 requires capabilities that cannot reasonably be granted in an unprivileged container.",
+      "type": "warning"
+    },
+    {
+      "text": "The LXC must share an L2 broadcast domain with your Apple TV. Bridged networking on vmbr0 is typical; VLAN-isolated or routed setups will break mDNS discovery and pairing will not work.",
+      "type": "info"
+    },
+    {
+      "text": "Use a dedicated burner Apple ID — NOT your primary account. Apple may flag or lock accounts used for sideloading.",
+      "type": "warning"
+    },
+    {
+      "text": "Apple TV pairing mode must be enabled each time before pairing: Settings → Remotes and Devices → Remote App and Devices.",
+      "type": "info"
+    },
+    {
+      "text": "Newly released tvOS versions may break pairing until an upstream fix is available. Consider disabling auto-updates on your Apple TV.",
+      "type": "warning"
+    }
+  ]
+}
