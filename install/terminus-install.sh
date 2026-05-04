@@ -35,7 +35,7 @@ RUBY_VERSION="4.0.3" setup_ruby
 PG_VERSION="17" setup_postgresql
 PG_DB_NAME="terminus" PG_DB_USER="terminus" setup_postgresql_db
 
-fetch_and_deploy_gh_release "terminus" "usetrmnl/terminus" "tarball"
+fetch_and_deploy_gh_tag "terminus" "usetrmnl/terminus"
 
 msg_info "Setting up Git Version Info"
 cd /opt/terminus

@@ -29,7 +29,7 @@ function update_script() {
     exit
   fi
 
-  if check_for_gh_release "terminus" "usetrmnl/terminus"; then
+  if check_for_gh_tag "terminus" "usetrmnl/terminus"; then
     msg_info "Stopping Services"
     systemctl stop terminus terminus-worker
     msg_ok "Stopped Services"
@@ -39,7 +39,7 @@ function update_script() {
     [[ -d /opt/terminus/public/uploads ]] && cp -r /opt/terminus/public/uploads /opt/terminus_uploads.bak
     msg_ok "Backed up Data"
 
-    CLEAN_INSTALL=1 fetch_and_deploy_gh_release "terminus" "usetrmnl/terminus" "tarball"
+    CLEAN_INSTALL=1 fetch_and_deploy_gh_tag "terminus" "usetrmnl/terminus"
 
     msg_info "Restoring Data"
     mv /opt/terminus.env.bak /opt/terminus/.env
