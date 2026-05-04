@@ -1,0 +1,43 @@
+{
+    "name": "Terminus",
+    "slug": "terminus",
+    "categories": [16],
+    "date_created": "2026-05-04",
+    "type": "ct",
+    "updateable": true,
+    "privileged": false,
+    "interface_port": 2300,
+    "documentation": "https://github.com/usetrmnl/terminus",
+    "website": "https://usetrmnl.com/",
+    "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/webp/terminus.webp",
+    "config_path": "/opt/terminus/.env",
+    "description": "Terminus is an open-source BYOS (Bring Your Own Server) application for TRMNL e-ink display devices, providing a self-hosted server for managing plugins, screens, playlists, and device firmware.",
+    "install_methods": [
+        {
+            "type": "default",
+            "script": "ct/terminus.sh",
+            "config_path": "/opt/terminus/.env",
+            "resources": {
+                "cpu": 4,
+                "ram": 4096,
+                "hdd": 10,
+                "os": "Debian",
+                "version": "13"
+            }
+        }
+    ],
+    "default_credentials": {
+        "username": null,
+        "password": null
+    },
+    "notes": [
+        {
+            "text": "On first access, create the initial admin account via the web UI.",
+            "type": "info"
+        },
+        {
+            "text": "Initial build (Ruby gems + asset compilation) takes several minutes.",
+            "type": "warning"
+        }
+    ]
+}
